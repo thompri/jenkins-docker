@@ -8,10 +8,10 @@ Dockerfile to create a Jenkins container that has properly working docker client
 # Example use
 ### To create the image
 1. `set-location <project_repo_root>`
-2. `docker build -t jenkins/jenkins-docker .`
+2. `docker build -t jenkins-docker .`
 
 ### To run the container
-`docker run --name jenk --rm -p 8080:8080 -v jenk_vol:/var/jenkins_home -v c:\code:/home -v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins-docker`
+`docker run --name jenk --hostname jenk --rm -p 8080:8080 -v jenk_vol:/var/jenkins_home -v c:\code:/home -v /var/run/docker.sock:/var/run/docker.sock jenkins-docker`
 
 - With the above example, ensure that the docker host firewall allows inbound access to port 8080 and c:\code exists on the docker host as a scratch area to map into the Jenkins container.
 
